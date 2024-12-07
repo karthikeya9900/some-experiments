@@ -14,7 +14,6 @@ const UNITS_OF_IS = [" thousand ", " million ", " billion "];
 
 // ----------------------- programm part -------------------------------
 
-// ---------- common fuunctions ------------------------
 
 function getWordFor0To19(number) {
   return WORDS_FROM_0_TO_19[number];
@@ -90,12 +89,12 @@ function generateWordsForIS(number) {
 
 // --------------------------- main function --------------------------------
 
-function numberToWords(number) {
+function numberToWords(number, NumberSystem) {
   if (number === 0) {
     return "zero";
   }
 
-  return choice === "AS" ? generateWordsForIN(number) :
+  return NumberSystem === "IN" ? generateWordsForIN(number) :
     generateWordsForIS(number);
 }
 
@@ -131,9 +130,7 @@ function convertNumberToWords() {
 
   const choice = getNumberSystem();
   const number = getNumberfromUser();
-
-  const numberInWords = choice === "IN" ? generateWordsForIN(number) :
-    generateWordsForIS(number);
+  const numberInWords = numberToWords(number, choice);
 
   console.log(number);
   console.log("IN WORDS ==>", numberInWords);
