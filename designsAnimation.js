@@ -135,20 +135,47 @@ const design1 = function () {
 
 // design1();
 
-
 const design2 = function () {
   const WIDTH = 45;
   const HEIGHT = 45;
   const curve1 = [[0, 23], '*', 22, 90, 0.13];
   const curve2 = [[23, 45], '*', 22, 90, 0.13];
-  const curve3 = [[45, 23], '*', 22, -45, 0.13];
+  const curve3 = [[45, 23], '*', 22, -30, 0.13];
   const curve4 = [[23, 0], '*', 22, 0, 0.13];
   const curves = [curve1, curve2, curve3, curve4];
 
   main(WIDTH, HEIGHT, curves, "series", 45);
 };
 
-design2();
+// design2();
+
+const design3 = function () {
+  const WIDTH = 45;
+  const HEIGHT = 45;
+  const curve1 = [[0, 0], '*', 22.5, 0, 0.13];
+  const curve2 = [[0, 45], '*', 22.5, 0, 0.13];
+  const curve3 = [[45, 45], '*', 22.5, 90, 0.13];
+  const curve4 = [[45, 0], '*', 22.5, 0, 0.13];
+  const curves = [curve1, curve2, curve3, curve4];
+
+  main(WIDTH, HEIGHT, curves, "parallel", 50);
+};
+
+// design3();
+
+const design4 = function () {
+  const WIDTH = 45;
+  const HEIGHT = 45;
+  const curve1 = [[0, 0], '*', 22.5, 0, 0.13];
+  const curve2 = [[0, 45], '*', 22.5, 180, 0.13];
+  const curve3 = [[45, 45], '*', 22.5, 90, 0.13];
+  const curve4 = [[45, 0], '*', 22.5, 0, 0.13];
+  const curves = [curve1, curve2, curve3, curve4];
+
+  main(WIDTH, HEIGHT, curves, "series", 50);
+};
+
+design4();
 
 /*
 
