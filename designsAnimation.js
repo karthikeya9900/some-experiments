@@ -111,18 +111,17 @@ function displayAnimFormat(width, height, frames) {
 // particle = [position, name, radius, angle, angularSpeed]
 // angle and angular speed in radians
 
-function main(WIDTH, HEIGHT, curves, type) {
+function main(WIDTH, HEIGHT, curves, type, steps) {
   const screen = createScreen(WIDTH, HEIGHT);
 
-  const frames = type === "parallel" ? animate(screen, curves, 50) :
-    animateOneByOneCurve(screen, curves, 50);
+  const frames = type === "parallel" ? animate(screen, curves, steps) :
+    animateOneByOneCurve(screen, curves, steps);
 
   displayAnimFormat(WIDTH, HEIGHT, frames);
 
 }
 
 const design1 = function () {
-
   const WIDTH = 45;
   const HEIGHT = 45;
   const curve1 = [[0, 23], '*', 22, 90, 0.13];
@@ -131,14 +130,13 @@ const design1 = function () {
   const curve4 = [[23, 0], '*', 22, 0, 0.13];
   const curves = [curve1, curve2, curve3, curve4];
 
-  main(WIDTH, HEIGHT, curves, "parallel");
+  main(WIDTH, HEIGHT, curves, "parallel", 50);
 };
 
 // design1();
 
 
 const design2 = function () {
-
   const WIDTH = 45;
   const HEIGHT = 45;
   const curve1 = [[0, 23], '*', 22, 90, 0.13];
@@ -147,7 +145,7 @@ const design2 = function () {
   const curve4 = [[23, 0], '*', 22, 0, 0.13];
   const curves = [curve1, curve2, curve3, curve4];
 
-  main(WIDTH, HEIGHT, curves, "series");
+  main(WIDTH, HEIGHT, curves, "series", 45);
 };
 
 design2();
